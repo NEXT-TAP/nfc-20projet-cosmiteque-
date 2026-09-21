@@ -1,0 +1,943 @@
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3edf1;
+    color: #332832;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   MAIN PROFILE
+========================================================= */
+
+.profile {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+    min-height: 100vh;
+
+    margin: auto;
+
+    background: #ffffff;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 40px rgba(190, 100, 160, 0.08);
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================================================
+   IPHONE THEME TOGGLE
+========================================================= */
+
+.theme-toggle {
+    position: fixed;
+
+    top: 18px;
+    right: 18px;
+
+    width: 62px;
+    height: 34px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    z-index: 9999;
+}
+
+.toggle-track {
+    position: relative;
+
+    display: block;
+
+    width: 62px;
+    height: 34px;
+
+    border-radius: 50px;
+
+    background: #e8dfe5;
+
+    box-shadow:
+        inset 0 1px 3px rgba(0, 0, 0, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.toggle-thumb {
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.20);
+
+    transition:
+        transform 0.35s cubic-bezier(.4, 0, .2, 1),
+        width 0.2s ease;
+
+    z-index: 3;
+}
+
+.toggle-icon {
+    position: absolute;
+
+    top: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.toggle-icon.moon {
+    left: 0;
+
+    color: #765365;
+
+    opacity: 0;
+}
+
+.toggle-icon.sun {
+    right: 0;
+
+    color: #d28a32;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    background: #ffffff;
+
+    transition:
+        background 0.35s ease;
+}
+
+.profile-content {
+    position: relative;
+
+    text-align: center;
+
+    padding: 35px 25px 28px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-wrapper {
+    width: 105px;
+    height: 105px;
+
+    margin: 0 auto 15px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    padding: 5px;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 8px 25px rgba(150, 70, 120, 0.18);
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.logo-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================================================
+   BUSINESS NAME
+========================================================= */
+
+.profile-content h1 {
+    font-size: 27px;
+    font-weight: 700;
+
+    color: #472e3e;
+
+    margin-bottom: 8px;
+
+    transition: color 0.35s ease;
+}
+
+.profile-content > p {
+    font-size: 15px;
+
+    color: #927487;
+
+    margin-bottom: 12px;
+
+    transition: color 0.35s ease;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.actions {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+
+    padding: 0 20px 25px;
+}
+
+.action-card {
+    min-height: 82px;
+
+    padding: 12px 5px;
+
+    border-radius: 18px;
+
+    background: #fff4f9;
+
+    border: 1px solid #f3dce8;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #6c435a;
+
+    transition:
+        transform 0.25s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        color 0.35s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+}
+
+.action-card .icon {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f5d5e6;
+
+    color: #9f4d7d;
+
+    font-size: 16px;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+.action-card span {
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+.action-card.whatsapp .icon {
+    background: #e2f6eb;
+
+    color: #2c9b61;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+    padding: 8px 20px 20px;
+}
+
+.section-title {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 15px 0;
+}
+
+.section-title span {
+    flex: 1;
+
+    height: 1px;
+
+    background: #ecd8e4;
+
+    transition:
+        background 0.35s ease;
+}
+
+.section-title h2 {
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: #71465e;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.35s ease;
+}
+
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+.info-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    border-radius: 17px;
+
+    background: #fff8fb;
+
+    border: 1px solid #f0dce6;
+
+    transition:
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.info-icon {
+    width: 43px;
+    height: 43px;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: #f5dce9;
+
+    color: #a34e7e;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 16px;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+.info-text {
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+.info-text small {
+    font-size: 11px;
+
+    color: #9c8390;
+
+    transition: color 0.35s ease;
+}
+
+.info-text strong {
+    font-size: 14px;
+
+    color: #4d3844;
+
+    transition: color 0.35s ease;
+}
+
+.small-action {
+    width: 35px;
+    height: 35px;
+
+    border-radius: 50%;
+
+    background: #f6e4ed;
+
+    color: #9e537e;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+
+/* =========================================================
+   SOCIAL LIST
+========================================================= */
+
+.social-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.social-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 13px 15px;
+
+    border-radius: 16px;
+
+    background: #fff8fb;
+
+    border: 1px solid #f0dce6;
+
+    transition:
+        transform 0.25s ease,
+        background 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.social-item:hover {
+    transform: translateX(3px);
+}
+
+.social-item > div {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #f4d8e7;
+
+    color: #a44e7f;
+
+    transition:
+        background 0.35s ease,
+        color 0.35s ease;
+}
+
+.social-item span {
+    flex: 1;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #503c47;
+
+    transition: color 0.35s ease;
+}
+
+.social-item > i {
+    color: #b58b9f;
+
+    font-size: 12px;
+
+    transition: color 0.35s ease;
+}
+
+
+/* =========================================================
+   ADD CONTACT
+========================================================= */
+
+.add-contact {
+    padding: 5px 20px 25px;
+}
+
+.add-contact button {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 16px;
+
+    padding: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a84f80,
+            #c477a2
+        );
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    box-shadow:
+        0 8px 20px rgba(168, 79, 128, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.35s ease;
+}
+
+.add-contact button:hover {
+    transform: translateY(-2px);
+}
+
+.add-contact button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    text-align: center;
+
+    padding: 10px 20px 35px;
+
+    color: #a28d98;
+
+    transition: color 0.35s ease;
+}
+
+footer p {
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #765365;
+
+    margin-bottom: 5px;
+
+    transition: color 0.35s ease;
+}
+
+footer small {
+    font-size: 10px;
+}
+
+footer a {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    color: #a34f7d;
+
+    transition: color 0.35s ease;
+}
+
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+    background: #0d0b0e;
+
+    color: #eeeeee;
+}
+
+body.dark-mode .profile {
+    background: #151216;
+
+    box-shadow:
+        0 0 45px rgba(0, 0, 0, 0.50);
+}
+
+
+/* HERO */
+
+body.dark-mode .hero {
+    background: #151216;
+}
+
+
+/* LOGO */
+
+body.dark-mode .logo-wrapper {
+    background: #1c181d;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.45);
+}
+
+
+/* BUSINESS */
+
+body.dark-mode .profile-content h1 {
+    color: #ffffff;
+}
+
+body.dark-mode .profile-content > p {
+    color: #b9aab5;
+}
+
+
+/* ACTIONS */
+
+body.dark-mode .action-card {
+    background: #211b21;
+
+    border-color: #342832;
+
+    color: #eadde6;
+}
+
+body.dark-mode .action-card .icon {
+    background: #352530;
+
+    color: #dc83ad;
+}
+
+body.dark-mode .action-card.whatsapp .icon {
+    background: #173024;
+
+    color: #4bd98b;
+}
+
+
+/* SECTION */
+
+body.dark-mode .section-title span {
+    background: #362b34;
+}
+
+body.dark-mode .section-title h2 {
+    color: #d99ab8;
+}
+
+
+/* INFO */
+
+body.dark-mode .info-card {
+    background: #211b21;
+
+    border-color: #342832;
+}
+
+body.dark-mode .info-icon {
+    background: #352530;
+
+    color: #dc83ad;
+}
+
+body.dark-mode .info-text small {
+    color: #a998a4;
+}
+
+body.dark-mode .info-text strong {
+    color: #f1e8ee;
+}
+
+body.dark-mode .small-action {
+    background: #352832;
+
+    color: #d788ae;
+}
+
+
+/* SOCIAL */
+
+body.dark-mode .social-item {
+    background: #211b21;
+
+    border-color: #342832;
+}
+
+body.dark-mode .social-item > div {
+    background: #352530;
+
+    color: #dc83ad;
+}
+
+body.dark-mode .social-item span {
+    color: #eee5eb;
+}
+
+body.dark-mode .social-item > i {
+    color: #9c8391;
+}
+
+
+/* ADD CONTACT */
+
+body.dark-mode .add-contact button {
+    background:
+        linear-gradient(
+            135deg,
+            #a84f80,
+            #c477a2
+        );
+
+    color: #ffffff;
+}
+
+
+/* FOOTER */
+
+body.dark-mode footer {
+    color: #93838e;
+}
+
+body.dark-mode footer p {
+    color: #c99ab2;
+}
+
+body.dark-mode footer a {
+    color: #d47fa7;
+}
+
+
+/* =========================================================
+   DARK TOGGLE
+========================================================= */
+
+body.dark-mode .toggle-track {
+    background: #332936;
+
+    box-shadow:
+        inset 0 1px 3px rgba(0, 0, 0, 0.45),
+        0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .toggle-thumb {
+    transform: translateX(28px);
+}
+
+body.dark-mode .toggle-icon.sun {
+    opacity: 0;
+
+    transform:
+        rotate(-30deg)
+        scale(0.7);
+}
+
+body.dark-mode .toggle-icon.moon {
+    opacity: 1;
+
+    transform:
+        rotate(0)
+        scale(1);
+
+    color: #f3d36b;
+}
+
+
+/* =========================================================
+   TOGGLE HOVER / ACTIVE
+========================================================= */
+
+.theme-toggle:hover .toggle-thumb {
+    box-shadow:
+        0 3px 9px rgba(0, 0, 0, 0.25);
+}
+
+.theme-toggle:active .toggle-thumb {
+    width: 31px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (min-width: 521px) {
+
+    .profile {
+        min-height: 100vh;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    body {
+        background: #ffffff;
+    }
+
+    body.dark-mode {
+        background: #0d0b0e;
+    }
+
+    .profile {
+        box-shadow: none;
+    }
+
+    .theme-toggle {
+        top: 14px;
+        right: 14px;
+    }
+
+}
+
+
+@media (max-width: 420px) {
+
+    .profile-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .profile-content h1 {
+        font-size: 24px;
+    }
+
+    .actions {
+        gap: 7px;
+
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .action-card {
+        min-height: 76px;
+    }
+
+    .action-card span {
+        font-size: 11px;
+    }
+
+    .section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+}
+
+
+@media (max-width: 350px) {
+
+    .actions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-card {
+        min-height: 75px;
+    }
+
+}
