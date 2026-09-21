@@ -20,9 +20,9 @@ const businessData = {
     // CONTACT
     // =========================
 
-    phone: "+212 640351475",
+    phone: "+212 699288928",
 
-    whatsapp: " +212 640351475",
+    whatsapp: " +212 699288928",
 
 
     // =========================
@@ -30,10 +30,10 @@ const businessData = {
     // =========================
 
     instagram:
-        "https://www.instagram.com/samak_alakhawayn/",
+        "https://www.instagram.com/kandil__karima?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
 
     facebook:
-        "https://www.facebook.com/share/1Bvkn8B7rQ/",
+        "https://www.facebook.com/share/1b9KJ1JHjk/?mibextid=wwXIfr",
 
 
     // =========================
@@ -46,7 +46,7 @@ const businessData = {
 
         lastName: "business",
 
-        phone: "+2126xxxxxxx",
+        phone: "+212699288928",
 
         organization: "name business"
 
