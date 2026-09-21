@@ -4,9 +4,9 @@ const businessData = {
     // BASIC INFORMATION
     // =========================
 
-    name: "name business",
+    name: "karima kandil",
 
-    description: "petite description",
+    description: "je suis infirmiere ",
 
 
     // =========================
