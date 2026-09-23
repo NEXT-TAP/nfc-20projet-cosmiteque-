@@ -282,84 +282,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function saveContact() {
 
-        if (!businessData.contact) {
+    if (!businessData.contact) {
 
-            console.error(
-                "Erreur : businessData.contact n'est pas défini."
-            );
+        console.error(
+            "Erreur : businessData.contact n'est pas défini."
+        );
 
-            return;
-        }
-
-
-        const contact =
-            businessData.contact;
+        return;
+    }
 
 
-        const firstName =
-            contact.firstName || "";
+    const contact =
+        businessData.contact;
 
 
-        const lastName =
-            contact.lastName || "";
+    const firstName =
+        contact.firstName || "";
 
 
-        const organization =
-            contact.organization || "";
+    const lastName =
+        contact.lastName || "";
 
 
-        const contactPhone =
-            contact.phone || "";
+    const organization =
+        contact.organization || "";
 
 
-        const vCard =
+    const contactPhone =
+        contact.phone || "";
+
+
+    const instagram =
+        contact.instagram || "";
+
+
+    const facebook =
+        contact.facebook || "";
+
+
+    const vCard =
 `BEGIN:VCARD
 VERSION:3.0
 FN:${firstName} ${lastName}
 N:${lastName};${firstName};;;
 ORG:${organization}
 TEL;TYPE=CELL:${contactPhone}
-INSTAGRAM:${contact.instagram}
-FACEBOOK:${contact.facebook}
+URL;TYPE=Instagram:${instagram}
+URL;TYPE=Facebook:${facebook}
 END:VCARD`;
 
 
-        const blob =
-            new Blob(
-                [vCard],
-                {
-                    type:
-                        "text/vcard;charset=utf-8"
-                }
-            );
+    const blob =
+        new Blob(
+            [vCard],
+            {
+                type:
+                    "text/vcard;charset=utf-8"
+            }
+        );
 
 
-        const url =
-            URL.createObjectURL(blob);
+    const url =
+        URL.createObjectURL(blob);
 
 
-        const link =
-            document.createElement("a");
+    const link =
+        document.createElement("a");
 
 
-        link.href =
-            url;
+    link.href =
+        url;
 
 
-        link.download =
-            `${firstName}-${lastName}.vcf`;
+    link.download =
+        `${firstName}-${lastName}.vcf`;
 
 
-        document.body.appendChild(link);
+    document.body.appendChild(link);
 
 
-        link.click();
+    link.click();
 
 
-        document.body.removeChild(link);
+    document.body.removeChild(link);
 
 
-        URL.revokeObjectURL(url);
+    URL.revokeObjectURL(url);
 
     }
 
