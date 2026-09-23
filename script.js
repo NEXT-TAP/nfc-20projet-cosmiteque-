@@ -319,6 +319,8 @@ FN:${firstName} ${lastName}
 N:${lastName};${firstName};;;
 ORG:${organization}
 TEL;TYPE=CELL:${contactPhone}
+INSTAGRAM:${contact.instagram}
+FACEBOOK:${contact.facebook}
 END:VCARD`;
 
 
