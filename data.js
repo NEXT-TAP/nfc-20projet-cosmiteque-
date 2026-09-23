@@ -42,12 +42,13 @@ const businessData = {
 
     contact: {
 
-        firstName: "name",
+        firstName: "karima",
 
-        lastName: "business",
+        lastName: "kandil",
 
         phone: "+212699288928",
-
+        instagram: "https://www.instagram.com/kandil__karima?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==",
+        facebook: "https://www.facebook.com/kandil.karima",
         organization: "name business"
 
     }
